@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NullTrace | A Sentinela Digital</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="selection:bg-primary-container selection:text-white">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#0e1322]/60 backdrop-blur-xl transition-all duration-300 shadow-[0_20px_50px_rgba(37,99,235,0.08)]">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a class="text-2xl font-bold tracking-tighter text-white dark:text-slate-50" href="#">NullTrace</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="nav-link text-blue-500 font-semibold border-b-2 border-blue-600 pb-1 text-sm uppercase tracking-widest transition-colors"
+                    href="#por-que-importa">Por que importa</a>
+                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
+                    href="#primeiros-passos">Primeiros Passos</a>
+                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
+                    href="#ferramentas">Ferramentas</a>
+                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
+                    href="#prevencao">Prevenção</a>
+                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
+                    href="#recursos">Recursos</a>
+            </div>
+            <a href="comece-agora.html"
+                class="bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container px-6 py-2.5 rounded-xl font-semibold scale-95 duration-200 active:opacity-80 transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] inline-block text-center">
+                Comece agora
+            </a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-black">
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_wcsiP2LX8bpAmxD2JktuXBBc4RGKvEBspftZe2MYgLF_NqdW4YprV98YGHbQ7IQmMLNfPkW3B69YYse6Qe-mCRWUBkzafJ6nsN0DZhvw6bflGTFR4xh92u_gHWIi1A1US_5IgksJBjVh0ad1TAc_REFvLzRFcOYZFMOxyCtOOqewYTfwVerSVyIxwPIx1eRBqLjEYGSxdv03DBiiExa83fqAAqHmbwb2bcylFZwlF4w1dlqvipxO0iR6t0x-YkOqNzgUos-6BbT1');">
+        </div>
+        <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="space-y-8 max-w-4xl mx-auto flex flex-col items-center text-center">
+                <div
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20 text-primary text-xs font-bold uppercase tracking-widest">
+                    <span class="mr-2 flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+                    Sua Privacidade é um Direito
+                </div>
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white leading-tight">
+                    Seus dados são seu <span class="text-secondary">patrimônio</span>.
+                    Proteja-os.
+                </h1>
+                <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed mx-auto">
+                    A segurança digital não precisa ser complexa. O NullTrace é seu guia definitivo para navegar na
+                    internet sem deixar rastros e retomar o controle da sua identidade online.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="comece-agora.html"
+                        class="bg-gradient-to-r from-primary-container to-secondary-container text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+                        Comece agora <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                    <button
+                        class="bg-surface-container hover:bg-surface-container-high text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-outline-variant/20 flex items-center justify-center gap-2">
+                        Ver ferramentas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Por que importa -->
+    <section class="py-24 bg-surface-container-low" id="por-que-importa">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="text-primary font-bold uppercase tracking-[0.2em] text-sm">Contexto Atual</span>
+                    <h2 class="text-4xl font-bold text-white mt-2">Por que sua privacidade importa?</h2>
+                </div>
+                <p class="text-on-surface-variant max-w-md">O rastro que você deixa hoje é a vulnerabilidade que
+                    criminosos exploram amanhã. Os números não mentem.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] transition-all duration-300">
+                    <span class="material-symbols-outlined text-secondary text-4xl mb-6">database</span>
+                    <h3 class="text-4xl font-bold text-white mb-2">10 Bilhões</h3>
+                    <p class="text-primary font-semibold mb-4">Registros vazados em 2023</p>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Milhões de identidades são expostas
+                        anualmente devido a falhas em grandes corporações. Você pode ser o próximo.</p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] transition-all duration-300">
+                    <span class="material-symbols-outlined text-secondary text-4xl mb-6">shopping_cart</span>
+                    <h3 class="text-4xl font-bold text-white mb-2">~$0,10</h3>
+                    <p class="text-primary font-semibold mb-4">Seu e-mail no mercado negro</p>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Para os corretores de dados, você é
+                        apenas um produto. Seus hábitos e contatos são vendidos por centavos.</p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] transition-all duration-300">
+                    <span class="material-symbols-outlined text-secondary text-4xl mb-6">password</span>
+                    <h3 class="text-4xl font-bold text-white mb-2">83%</h3>
+                    <p class="text-primary font-semibold mb-4">Reutilizam a mesma senha</p>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">O erro humano ainda é o maior vetor de
+                        ataque. Uma única senha comprometida pode derrubar toda sua vida digital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Guia de Primeiros Passos -->
+    <section class="py-24 bg-surface" id="primeiros-passos">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold uppercase tracking-[0.2em] text-sm">O Caminho</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Guia de Primeiros Passos</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+                <!-- Step 1 -->
+                <div
+                    class="group flex gap-6 p-6 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/10">
+                    <div
+                        class="text-4xl font-bold text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">
+                        01</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">Troque o buscador</h4>
+                        <p class="text-on-surface-variant text-sm">Pare de ser rastreado a cada pesquisa. Use o
+                            DuckDuckGo ou Brave Search.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div
+                    class="group flex gap-6 p-6 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/10">
+                    <div
+                        class="text-4xl font-bold text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">
+                        02</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">Use um gerenciador de senhas</h4>
+                        <p class="text-on-surface-variant text-sm">Bitwarden é a melhor escolha open-source para criar e
+                            armazenar senhas únicas.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div
+                    class="group flex gap-6 p-6 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/10">
+                    <div
+                        class="text-4xl font-bold text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">
+                        03</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">Ative 2FA (MFA)</h4>
+                        <p class="text-on-surface-variant text-sm">Autenticação de dois fatores é obrigatória. Evite
+                            SMS, use apps como Aegis.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div
+                    class="group flex gap-6 p-6 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/10">
+                    <div
+                        class="text-4xl font-bold text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">
+                        04</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">Use e-mail privado</h4>
+                        <p class="text-on-surface-variant text-sm">Proton Mail oferece criptografia de ponta a ponta que
+                            o Gmail não possui.</p>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div
+                    class="group flex gap-6 p-6 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/10">
+                    <div
+                        class="text-4xl font-bold text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">
+                        05</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">Utilize uma VPN confiável</h4>
+                        <p class="text-on-surface-variant text-sm">Mullvad ou IVPN protegem seu tráfego sem coletar logs
+                            da sua atividade.</p>
+                    </div>
+                </div>
+                <!-- Step 6 -->
+                <div
+                    class="group flex gap-6 p-6 rounded-xl hover:bg-surface-container transition-colors border border-transparent hover:border-outline-variant/10">
+                    <div
+                        class="text-4xl font-bold text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">
+                        06</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">Bloqueie rastreadores</h4>
+                        <p class="text-on-surface-variant text-sm">Instale extensões como uBlock Origin para limpar
+                            anúncios e trackers de sites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ferramentas & Serviços (Bento Grid Style) -->
+    <section class="py-24 bg-surface-container-low" id="ferramentas">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white">Arsenal de Privacidade</h2>
+                <p class="text-on-surface-variant mt-2">Ferramentas recomendadas pela comunidade e especialistas em
+                    segurança.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Tool 1 -->
+                <div
+                    class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex flex-col h-full group hover:bg-surface-container-high transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <img src="https://cdn.simpleicons.org/protonmail/b4c5ff" alt="Proton Mail logo" class="w-8 h-8">
+                        <span
+                            class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold uppercase tracking-widest rounded">E-mail</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Proton Mail</h3>
+                    <p class="text-on-surface-variant text-sm mb-6 flex-grow">O maior serviço de e-mail seguro do mundo,
+                        com sede na Suíça.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-[10px] text-primary-fixed-dim font-mono">OPEN SOURCE</span>
+                        <a class="text-white text-sm font-bold flex items-center gap-1 group-hover:text-secondary transition-colors"
+                            href="#">
+                            Ver site <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Tool 2 -->
+                <div
+                    class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex flex-col h-full group hover:bg-surface-container-high transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <img src="https://cdn.simpleicons.org/signal/b4c5ff" alt="Signal logo" class="w-8 h-8">
+                        <span
+                            class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold uppercase tracking-widest rounded">Messenger</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Signal</h3>
+                    <p class="text-on-surface-variant text-sm mb-6 flex-grow">Comunicação privada simplificada. Sem
+                        anúncios, sem rastreadores.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-[10px] text-primary-fixed-dim font-mono">GRATUITO</span>
+                        <a class="text-white text-sm font-bold flex items-center gap-1 group-hover:text-secondary transition-colors"
+                            href="#">
+                            Ver site <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Tool 3 -->
+                <div
+                    class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex flex-col h-full group hover:bg-surface-container-high transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <img src="https://cdn.simpleicons.org/bitwarden/b4c5ff" alt="Bitwarden logo" class="w-8 h-8">
+                        <span
+                            class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold uppercase tracking-widest rounded">Senha</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Bitwarden</h3>
+                    <p class="text-on-surface-variant text-sm mb-6 flex-grow">Gerencie suas senhas em todos os
+                        dispositivos com segurança absoluta.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-[10px] text-primary-fixed-dim font-mono">OPEN SOURCE</span>
+                        <a class="text-white text-sm font-bold flex items-center gap-1 group-hover:text-secondary transition-colors"
+                            href="#">
+                            Ver site <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Tool 4 -->
+                <div
+                    class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex flex-col h-full group hover:bg-surface-container-high transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <img src="https://cdn.simpleicons.org/mullvad/b4c5ff" alt="Mullvad logo" class="w-8 h-8">
+                        <span
+                            class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold uppercase tracking-widest rounded">VPN</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Mullvad VPN</h3>
+                    <p class="text-on-surface-variant text-sm mb-6 flex-grow">VPN focada em anonimato total. Sem e-mail
+                        necessário para cadastro.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-[10px] text-primary-fixed-dim font-mono">SEM LOGS</span>
+                        <a class="text-white text-sm font-bold flex items-center gap-1 group-hover:text-secondary transition-colors"
+                            href="#">
+                            Ver site <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Tool 5 -->
+                <div
+                    class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex flex-col h-full group hover:bg-surface-container-high transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <img src="https://cdn.simpleicons.org/torbrowser/b4c5ff" alt="Tor Browser logo" class="w-8 h-8">
+                        <span
+                            class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold uppercase tracking-widest rounded">Browser</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Tor Browser</h3>
+                    <p class="text-on-surface-variant text-sm mb-6 flex-grow">O padrão ouro para evitar censura e
+                        vigilância na rede.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-[10px] text-primary-fixed-dim font-mono">ANÔNIMO</span>
+                        <a class="text-white text-sm font-bold flex items-center gap-1 group-hover:text-secondary transition-colors"
+                            href="#">
+                            Ver site <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Tool 6 -->
+                <div
+                    class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex flex-col h-full group hover:bg-surface-container-high transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <img src="https://cdn.simpleicons.org/duckduckgo/b4c5ff" alt="DuckDuckGo logo" class="w-8 h-8">
+                        <span
+                            class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold uppercase tracking-widest rounded">Busca</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">DuckDuckGo</h3>
+                    <p class="text-on-surface-variant text-sm mb-6 flex-grow">O motor de busca que não te persegue.
+                        Privacidade por padrão.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-[10px] text-primary-fixed-dim font-mono">GRATUITO</span>
+                        <a class="text-white text-sm font-bold flex items-center gap-1 group-hover:text-secondary transition-colors"
+                            href="#">
+                            Ver site <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Prevenção de Vazamentos -->
+    <section class="py-24 bg-surface" id="prevencao">
+        <div class="max-w-7xl mx-auto px-8">
+            <div
+                class="bg-gradient-to-br from-surface-container to-surface-container-highest p-8 md:p-16 rounded-3xl border border-primary-container/20 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -mr-20 -mt-20 rounded-full"></div>
+                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold text-white mb-6">Verifique se seus dados vazaram</h2>
+                        <p class="text-on-surface-variant mb-8 leading-relaxed">
+                            Muitas vezes, a primeira pista de que sua segurança foi comprometida vem de vazamentos
+                            antigos. Use o banco de dados oficial para checar seu e-mail agora mesmo.
+                        </p>
+                        <a class="inline-flex items-center justify-center gap-3 bg-primary-container text-white px-8 py-4 rounded-xl font-bold hover:bg-primary-container/80 transition-all"
+                            href="https://haveibeenpwned.com" target="_blank">
+                            Consultar "Have I Been Pwned" <span class="material-symbols-outlined">security</span>
+                        </a>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-white">Boas Práticas Imediatas:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-error mt-1"
+                                    style="font-variation-settings: 'FILL' 1;">error</span>
+                                <div>
+                                    <p class="font-bold text-white">Não ignore alertas</p>
+                                    <p class="text-sm text-on-surface-variant">Se um site que você usa vazou dados,
+                                        troque a senha imediatamente.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-secondary mt-1"
+                                    style="font-variation-settings: 'FILL' 1;">shield</span>
+                                <div>
+                                    <p class="font-bold text-white">Isole seus e-mails</p>
+                                    <p class="text-sm text-on-surface-variant">Use serviços de alias (como SimpleLogin)
+                                        para não dar seu e-mail real.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Recursos & Comunidade -->
+    <section class="py-24 bg-surface" id="recursos">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white">Recursos &amp; Comunidade</h2>
+                <p class="text-on-surface-variant mt-2">Aprofunde seus conhecimentos em fóruns e documentações globais.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <h4 class="text-primary font-bold uppercase tracking-widest text-xs">Fóruns</h4>
+                    <ul class="space-y-2 text-on-surface-variant text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">Reddit r/Privacy</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">PrivacyGuides Forum</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Wilders Security</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-primary font-bold uppercase tracking-widest text-xs">Canais</h4>
+                    <ul class="space-y-2 text-on-surface-variant text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">Mental Outlaw</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">The Privacy, Security &amp; OSINT</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors" href="#">Techlore</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-primary font-bold uppercase tracking-widest text-xs">Guias</h4>
+                    <ul class="space-y-2 text-on-surface-variant text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">PrivacyGuides.org</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">EFF - Surveillance Self-Defense</a>
+                        </li>
+                        <li><a class="hover:text-white transition-colors" href="#">Freedom of the Press</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-primary font-bold uppercase tracking-widest text-xs">Ferramentas</h4>
+                    <ul class="space-y-2 text-on-surface-variant text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">OpenSSL Guide</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">GPG/PGP Basics</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Tailscale Networking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-20 text-center">
+                <p class="text-2xl md:text-3xl font-headline font-bold text-white mb-8 italic opacity-80">
+                    "A privacidade é uma jornada. Você já deu o primeiro passo."
+                </p>
+                <div class="h-px w-24 bg-primary-container mx-auto"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-[#0e1322] w-full py-12 border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
+            <div class="text-lg font-bold text-slate-200">NullTrace</div>
+            <div class="flex gap-8">
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]"
+                    href="#">Privacidade</a>
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]"
+                    href="#">Termos</a>
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]"
+                    href="#">Contato</a>
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]"
+                    href="#">Comunidade</a>
+            </div>
+            <div class="text-slate-500 text-sm">
+                © 2024 NullTrace – A Sentinela Digital.
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
