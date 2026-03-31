@@ -15,9 +15,16 @@
     <nav class="w-full z-50 bg-[#0e1322]/60 backdrop-blur-xl border-b border-white/10">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
             <a class="text-2xl font-bold tracking-tighter text-white" href="index.html">NullTrace</a>
-            <a href="index.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
-                <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao início
-            </a>
+            <div class="flex items-center gap-4">
+                <!-- Modo Rápido Toggle -->
+                <button id="quick-mode-btn" onclick="toggleQuickMode()" class="flex items-center gap-2 px-4 py-2 rounded-xl border border-outline-variant/20 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-sm font-bold transition-all duration-300 select-none" title="Alternar Modo Rápido">
+                    <span class="material-symbols-outlined text-base" id="quick-mode-icon">bolt</span>
+                    <span id="quick-mode-label">Modo rápido</span>
+                </button>
+                <a href="index.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao início
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -41,6 +48,116 @@
                         <div id="progress-bar" class="bg-gradient-to-r from-primary-container to-secondary-container h-full rounded-full transition-all duration-500 ease-out w-0 relative">
                             <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completion Banner (hidden by default) -->
+            <div id="completion-banner" class="hidden mb-8">
+                <div class="relative overflow-hidden flex items-center gap-4 px-6 py-5 rounded-2xl bg-gradient-to-r from-primary-container/20 via-secondary-container/15 to-primary-container/20 border border-primary-container/40">
+                    <!-- left glow orb -->
+                    <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-primary-container/20 blur-2xl pointer-events-none"></div>
+                    <div class="flex-shrink-0 w-11 h-11 rounded-full bg-primary-container/30 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary check-icon-filled" style="font-size:22px">verified</span>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-white font-bold text-sm mb-0.5">Fundação completa!</p>
+                        <p class="text-on-surface-variant text-xs">Todos os 6 passos concluídos &mdash; você desbloqueou os níveis avançados.</p>
+                    </div>
+                    <span class="material-symbols-outlined text-primary/60 flex-shrink-0" style="font-size:20px">arrow_downward</span>
+                </div>
+            </div>
+
+            <!-- Quick Mode Panel -->
+            <div id="quick-mode-panel" class="hidden mb-8">
+                <div class="bg-surface-container rounded-3xl border border-primary-container/30 overflow-hidden shadow-lg shadow-primary-container/10">
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 px-6 py-4 border-b border-outline-variant/10 bg-primary-container/5">
+                        <span class="material-symbols-outlined text-primary" style="font-size:20px">bolt</span>
+                        <span class="text-white font-bold text-sm uppercase tracking-wider">Modo Rápido</span>
+                        <span class="ml-auto text-xs text-on-surface-variant font-medium">Links diretos · Instruções mínimas</span>
+                    </div>
+                    <!-- Steps list -->
+                    <div class="divide-y divide-outline-variant/10">
+
+                        <!-- QM Step 1 -->
+                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">1</div>
+                            <div class="flex-grow">
+                                <p class="text-white font-semibold text-sm mb-1">Trocar buscador</p>
+                                <p class="text-on-surface-variant text-xs mb-2">Configure o DuckDuckGo como padrão no seu navegador.</p>
+                                <a href="https://duckduckgo.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>duckduckgo.com
+                                </a>
+                            </div>
+                            <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="0"></div>
+                        </div>
+
+                        <!-- QM Step 2 -->
+                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">2</div>
+                            <div class="flex-grow">
+                                <p class="text-white font-semibold text-sm mb-1">Gerenciador de senhas</p>
+                                <p class="text-on-surface-variant text-xs mb-2">Crie conta no Bitwarden e instale a extensão no navegador.</p>
+                                <a href="https://bitwarden.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>bitwarden.com
+                                </a>
+                            </div>
+                            <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="1"></div>
+                        </div>
+
+                        <!-- QM Step 3 -->
+                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">3</div>
+                            <div class="flex-grow">
+                                <p class="text-white font-semibold text-sm mb-1">Ativar 2FA</p>
+                                <p class="text-on-surface-variant text-xs mb-2">Instale Aegis no celular e ative verificação em duas etapas nas suas contas.</p>
+                                <a href="https://getaegis.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>getaegis.app
+                                </a>
+                            </div>
+                            <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="2"></div>
+                        </div>
+
+                        <!-- QM Step 4 -->
+                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">4</div>
+                            <div class="flex-grow">
+                                <p class="text-white font-semibold text-sm mb-1">E-mail privado</p>
+                                <p class="text-on-surface-variant text-xs mb-2">Crie uma conta no Proton Mail e use para contas importantes.</p>
+                                <a href="https://proton.me/mail" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>proton.me/mail
+                                </a>
+                            </div>
+                            <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="3"></div>
+                        </div>
+
+                        <!-- QM Step 5 -->
+                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">5</div>
+                            <div class="flex-grow">
+                                <p class="text-white font-semibold text-sm mb-1">Usar VPN</p>
+                                <p class="text-on-surface-variant text-xs mb-2">Assine e ative o Mullvad antes de qualquer Wi-Fi público.</p>
+                                <a href="https://mullvad.net" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>mullvad.net
+                                </a>
+                            </div>
+                            <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="4"></div>
+                        </div>
+
+                        <!-- QM Step 6 -->
+                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">6</div>
+                            <div class="flex-grow">
+                                <p class="text-white font-semibold text-sm mb-1">Bloquear rastreadores</p>
+                                <p class="text-on-surface-variant text-xs mb-2">Instale uBlock Origin nas extensões do seu navegador.</p>
+                                <a href="https://ublockorigin.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>ublockorigin.com
+                                </a>
+                            </div>
+                            <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="5"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -525,7 +642,63 @@
                 }
             }
 
-            // Atrelar comportamentos aos cards
+            // ── Microinteraction helpers ──────────────────────────────
+
+            /** Dispara animação CSS em um elemento (remove e re-adiciona a classe) */
+            function fireAnim(el, cls) {
+                el.classList.remove(cls);
+                void el.offsetWidth; // reflow
+                el.classList.add(cls);
+                el.addEventListener('animationend', () => el.classList.remove(cls), { once: true });
+            }
+
+            /** Shimmer na progress bar */
+            function shimmerBar() {
+                fireAnim(progressBar, 'progress-shimmer');
+            }
+
+            /** Partículas voando do círculo de check */
+            function burstParticles(circleEl) {
+                const colors = ['#6366f1', '#818cf8', '#a5b4fc', '#c7d2fe', '#e0e7ff'];
+                const rect = circleEl.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                for (let i = 0; i < 8; i++) {
+                    const p = document.createElement('span');
+                    p.className = 'particle';
+                    const angle = (i / 8) * 2 * Math.PI;
+                    const dist = 28 + Math.random() * 18;
+                    p.style.setProperty('--tx', `${Math.cos(angle) * dist}px`);
+                    p.style.setProperty('--ty', `${Math.sin(angle) * dist}px`);
+                    p.style.background = colors[i % colors.length];
+                    p.style.left = `${cx + window.scrollX - 3}px`;
+                    p.style.top  = `${cy + window.scrollY - 3}px`;
+                    document.body.appendChild(p);
+                    p.addEventListener('animationend', () => p.remove());
+                }
+            }
+
+            /** Mostra / esconde banner de conclusão */
+            const completionBanner = document.getElementById('completion-banner');
+            let bannerVisible = false;
+            function setCompletionBanner(show) {
+                if (show === bannerVisible) return;
+                bannerVisible = show;
+                if (show) {
+                    completionBanner.classList.remove('hidden');
+                    completionBanner.style.opacity = '1';
+                } else {
+                    completionBanner.style.transition = 'opacity 0.3s ease';
+                    completionBanner.style.opacity = '0';
+                    setTimeout(() => {
+                        completionBanner.classList.add('hidden');
+                        completionBanner.style.transition = '';
+                        completionBanner.style.opacity = '';
+                    }, 320);
+                }
+            }
+
+            // ── Atrelar comportamentos aos cards ─────────────────────────
             cards.forEach((card, index) => {
                 const header = card.querySelector('.step-header');
                 const content = card.querySelector('.step-content');
@@ -533,53 +706,144 @@
                 const markBtn = card.querySelector('.mark-complete-btn');
                 const unmarkBtn = card.querySelector('.unmark-complete-btn');
                 const checkbox = card.querySelector('.step-checkbox');
-                
+                const checkCircle = card.querySelector('.check-circle');
+
                 if (savedState[index]) {
                     checkbox.checked = true;
                 }
 
-                // Lógica de expansão (Accordion)
+                // Lógica de expansão (Accordion) com ripple
                 header.addEventListener('click', () => {
                     const isOpen = content.classList.contains('grid-rows-[1fr]');
-                    
+
                     // Fechar abertos
                     document.querySelectorAll('.step-content').forEach(c => {
                         c.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
                         c.classList.replace('opacity-100', 'opacity-0');
+                        c.classList.remove('expanding');
                     });
                     document.querySelectorAll('.chevron-icon').forEach(icon => {
-                        icon.style.transform = "rotate(0deg)";
+                        icon.style.transform = 'rotate(0deg)';
                     });
 
-                    // Se não estava aberto, abrir esse
+                    // Se não estava aberto, abrir com ripple
                     if (!isOpen) {
                         content.classList.replace('grid-rows-[0fr]', 'grid-rows-[1fr]');
                         content.classList.replace('opacity-0', 'opacity-100');
-                        chevron.style.transform = "rotate(-180deg)";
+                        chevron.style.transform = 'rotate(-180deg)';
+                        // ripple-in
+                        content.classList.remove('expanding');
+                        void content.offsetWidth;
+                        content.classList.add('expanding');
+                        content.addEventListener('animationend', () => content.classList.remove('expanding'), { once: true });
                     }
                 });
 
-                // Lógica dos botões Marcar e Desfazer conclusão
+                // Marcar concluído — pop + partículas + shimmer
                 markBtn.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Evitar click de colapso no botão
+                    e.stopPropagation();
                     checkbox.checked = true;
                     updateProgress();
+                    shimmerBar();
+                    fireAnim(checkCircle, 'check-pop');
+                    burstParticles(checkCircle);
                     // Colapsar após marcar
                     content.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
                     content.classList.replace('opacity-100', 'opacity-0');
-                    chevron.style.transform = "rotate(0deg)";
+                    content.classList.remove('expanding');
+                    chevron.style.transform = 'rotate(0deg)';
+                    syncQuickModeChecks();
                 });
 
+                // Desfazer — shake + shimmer
                 unmarkBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     checkbox.checked = false;
+                    fireAnim(checkCircle, 'shake');
                     updateProgress();
+                    shimmerBar();
+                    syncQuickModeChecks();
                 });
             });
 
-            // Iniciar com o estado atual (vazio)
+            // Iniciar com o estado atual
             updateProgress();
+            shimmerBar();
+
+            // Sincronizar badges de check no Modo Rápido
+            function syncQuickModeChecks() {
+                document.querySelectorAll('.qm-check-wrapper').forEach(wrapper => {
+                    const stepIndex = parseInt(wrapper.dataset.stepIndex);
+                    const card = cards[stepIndex];
+                    if (!card) return;
+                    const checked = card.querySelector('.step-checkbox').checked;
+                    wrapper.innerHTML = checked
+                        ? `<span class="material-symbols-outlined text-primary check-icon-filled" style="font-size:20px">check_circle</span>`
+                        : `<span class="material-symbols-outlined" style="font-size:20px;opacity:0.35">radio_button_unchecked</span>`;
+                });
+            }
+
+            syncQuickModeChecks();
+
+            // Patch: mostrar banner quando 100%
+            const _baseUpdateProgress = updateProgress;
+            updateProgress = function() {
+                _baseUpdateProgress();
+                const total = cards.length;
+                const done = [...cards].filter(c => c.querySelector('.step-checkbox').checked).length;
+                setCompletionBanner(done === total);
+            };
         });
+
+        // Toggle Modo Rápido
+        let quickModeActive = false;
+        function toggleQuickMode() {
+            quickModeActive = !quickModeActive;
+            const btn = document.getElementById('quick-mode-btn');
+            const icon = document.getElementById('quick-mode-icon');
+            const label = document.getElementById('quick-mode-label');
+            const panel = document.getElementById('quick-mode-panel');
+            const checklist = document.getElementById('checklist-container');
+
+            if (quickModeActive) {
+                // Activate
+                btn.classList.add('bg-primary/20', 'border-primary/40', 'text-primary');
+                btn.classList.remove('bg-white/5', 'border-outline-variant/20', 'text-slate-300');
+                icon.textContent = 'bolt';
+                label.textContent = 'Modo rápido ON';
+
+                panel.classList.remove('hidden');
+                panel.style.opacity = '0';
+                panel.style.transform = 'translateY(-8px)';
+                requestAnimationFrame(() => {
+                    panel.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                    panel.style.opacity = '1';
+                    panel.style.transform = 'translateY(0)';
+                });
+
+                checklist.style.transition = 'opacity 0.25s ease';
+                checklist.style.opacity = '0';
+                setTimeout(() => checklist.classList.add('hidden'), 260);
+            } else {
+                // Deactivate
+                btn.classList.remove('bg-primary/20', 'border-primary/40', 'text-primary');
+                btn.classList.add('bg-white/5', 'border-outline-variant/20', 'text-slate-300');
+                icon.textContent = 'bolt';
+                label.textContent = 'Modo rápido';
+
+                panel.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+                panel.style.opacity = '0';
+                panel.style.transform = 'translateY(-8px)';
+                setTimeout(() => panel.classList.add('hidden'), 260);
+
+                checklist.classList.remove('hidden');
+                checklist.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    checklist.style.transition = 'opacity 0.3s ease';
+                    checklist.style.opacity = '1';
+                });
+            }
+        }
     </script>
 </body>
 </html>
