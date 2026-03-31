@@ -1,6 +1,0 @@
-/* Fallback mínimo — o design system completo está em css/style.css */
-body { font-family: 'Inter', system-ui, sans-serif; background-color: #0d1117; color: #8b91a8; }
-h1, h2, h3, h4 { font-family: 'Space Grotesk', system-ui, sans-serif; color: #f0f2ff; }
-.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' -25, 'opsz' 24; }
-.glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-.hero-gradient { background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(124, 144, 255, 0.10) 0%, transparent 65%); }

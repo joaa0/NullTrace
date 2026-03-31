@@ -181,15 +181,13 @@ a:hover { color: var(--color-accent-hover); }
 
 /* ── 4. Navegação ────────────────────────────────────────────── */
 nav {
-  background-color: rgba(13, 17, 23, 0.75) !important;
-  border-bottom-color: var(--color-border) !important;
-  backdrop-filter: blur(var(--blur-nav));
-  -webkit-backdrop-filter: blur(var(--blur-nav));
-}
-
-.glass-nav {
-  backdrop-filter: blur(var(--blur-nav));
-  -webkit-backdrop-filter: blur(var(--blur-nav));
+  background-color: rgba(13, 17, 23, 0.5) !important; /* Mais transparente */
+  border-bottom: 1px solid var(--color-border) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  height: 64px; /* Fixando altura para consistência */
+  display: flex;
+  align-items: center;
 }
 
 /* Logo NullTrace */
@@ -197,9 +195,12 @@ nav a[href="index.html"]:first-child,
 nav a[href="#"]:first-child {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
+  font-size: 1.1rem;
   letter-spacing: var(--tracking-tight);
-  font-size: 1.2rem;
   color: var(--color-text-primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Links da nav */
@@ -207,22 +208,39 @@ nav a[href="#"]:first-child {
   font-family: var(--font-body);
   font-size: var(--text-xs) !important;
   font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-widest);
+  letter-spacing: var(--tracking-normal) !important; /* Menos tracking para ar moderno */
+  text-transform: none !important; /* Sem uppercase agressivo */
   color: var(--color-text-secondary) !important;
-  border-bottom-color: transparent !important;
-  padding-bottom: 0 !important;
-  transition: color var(--transition-fast);
+  padding: 6px 12px !important;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast) !important;
+  position: relative;
+  border-bottom: none !important; /* Removendo borda inferior antiga */
 }
-.nav-link:hover { color: var(--color-text-primary) !important; }
+
+.nav-link:hover {
+  color: var(--color-text-primary) !important;
+  background-color: var(--color-accent-muted) !important;
+}
+
+/* Destaque sutil no item ativo */
 .nav-link.text-blue-500 {
   color: var(--color-accent) !important;
-  border-bottom-color: transparent !important;
+  background-color: var(--color-accent-muted) !important;
+}
+
+/* Botão "Comece agora" na Nav */
+nav a.bg-gradient-to-r {
+  font-size: var(--text-xs) !important;
+  padding: 8px 16px !important;
+  border-radius: var(--radius-md) !important;
 }
 
 /* ── 5. Hero Section ─────────────────────────────────────────── */
 header {
+  padding-top: 160px !important; /* Mais respiro no topo */
+  padding-bottom: 100px !important;
   background-color: var(--color-bg) !important;
-  position: relative;
 }
 
 header::before {
@@ -267,46 +285,73 @@ header h1 .text-secondary {
 }
 
 /* Botão CTA primário */
-.bg-gradient-to-r.from-primary-container.to-secondary-container {
+.bg-gradient-to-r.from-primary-container.to-secondary-container,
+a[href="comece-agora.html"] {
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%) !important;
   color: var(--color-bg) !important;
   font-family: var(--font-body);
-  font-weight: var(--weight-semibold);
-  border-radius: var(--radius-lg) !important;
-  border: none;
+  font-weight: var(--weight-bold) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 10px 24px !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
   letter-spacing: var(--tracking-normal);
   transition: all var(--transition-base);
-  box-shadow: 0 0 0 0 var(--color-accent-glow);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
-.bg-gradient-to-r.from-primary-container.to-secondary-container:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px var(--color-accent-glow);
-  opacity: 0.92;
+
+.bg-gradient-to-r.from-primary-container.to-secondary-container:hover,
+a[href="comece-agora.html"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--color-accent-glow);
+  filter: brightness(1.1);
 }
 
 /* Botão secundário "Ver ferramentas" */
-.bg-surface-container.hover\:bg-surface-container-high {
+.bg-surface-container.hover\:bg-surface-container-high,
+button.bg-surface-container {
   background-color: var(--color-surface) !important;
-  border-color: var(--color-border-strong) !important;
+  border: 1px solid var(--color-border-strong) !important;
   color: var(--color-text-primary) !important;
-  border-radius: var(--radius-lg) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 10px 24px !important;
   font-weight: var(--weight-semibold);
   transition: all var(--transition-base);
-}
-.bg-surface-container.hover\:bg-surface-container-high:hover {
-  background-color: var(--color-surface-raised) !important;
-  border-color: var(--color-border-accent) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-/* ── 6. Seções ───────────────────────────────────────────────── */
+.bg-surface-container.hover\:bg-surface-container-high:hover,
+button.bg-surface-container:hover {
+  background-color: var(--color-surface-raised) !important;
+  border-color: var(--color-border-accent) !important;
+  transform: translateY(-2px);
+}
+
+/* ── 6. Seções — Mais espaçamento e clareza ───────────────────── */
 section {
+  padding-top: var(--space-24) !important;
+  padding-bottom: var(--space-24) !important;
   background-color: var(--color-bg) !important;
 }
 
-/* Alternância sutil entre seções */
-section.bg-surface-container-low,
-section.bg-surface {
-  background-color: var(--color-bg-subtle) !important;
+/* Gaps maiores nos grids para "respirar" */
+.grid {
+  gap: var(--space-8) !important;
+}
+
+@media (min-width: 1024px) {
+  .gap-x-12 { column-gap: var(--space-12) !important; }
+}
+
+/* Espaçamento extra abaixo dos títulos de seção */
+section h2 {
+  margin-bottom: var(--space-12) !important;
 }
 
 /* ─ Rótulos de seção (ex: "Contexto Atual") ─ */
@@ -318,62 +363,53 @@ section.bg-surface {
 }
 
 /* ── 7. Cards ────────────────────────────────────────────────── */
-/* Cards stat "Por que importa" */
-.bg-surface-container {
-  background-color: var(--color-surface) !important;
-}
+/* Cards stat "Por que importa" e Arsenal de Ferramentas */
 .bg-surface-container.rounded-xl,
-.bg-surface-container.rounded-xl.border {
-  background-color: var(--color-surface) !important;
-  border-color: var(--color-border) !important;
-  border-radius: var(--radius-xl) !important;
-  transition: all var(--transition-base);
-}
-.bg-surface-container.rounded-xl:hover,
-.bg-surface-container.rounded-xl.border:hover {
-  background-color: var(--color-surface-raised) !important;
-  border-color: var(--color-border-strong) !important;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* Número grande nos cards stat */
-.bg-surface-container h3.text-4xl {
-  font-family: var(--font-display);
-  font-size: var(--text-4xl);
-  font-weight: var(--weight-bold);
-  color: var(--color-text-primary) !important;
-  letter-spacing: var(--tracking-tight);
-}
-
-/* Label do stat */
-.bg-surface-container .text-primary.font-semibold {
-  color: var(--color-accent) !important;
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
-}
-
-/* Cards de ferramenta */
 .bg-surface-container.flex.flex-col.h-full {
   background-color: var(--color-surface) !important;
-  border-color: var(--color-border) !important;
+  border: 1px solid var(--color-border) !important;
   border-radius: var(--radius-xl) !important;
+  padding: var(--space-8) !important;
   transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
+
+.bg-surface-container.rounded-xl:hover,
 .bg-surface-container.flex.flex-col.h-full:hover {
   background-color: var(--color-surface-raised) !important;
   border-color: var(--color-border-strong) !important;
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ── 8. Steps — "Primeiros Passos" (index.html) ──────────────── */
+/* Transformando os blocos de passos em cards por padrão */
 .group.flex.gap-6.p-6.rounded-xl {
+  background-color: var(--color-bg-subtle) !important;
+  border: 1px solid var(--color-border) !important;
   border-radius: var(--radius-xl) !important;
+  padding: var(--space-6) !important;
   transition: all var(--transition-base);
 }
+
 .group.flex.gap-6.p-6.rounded-xl:hover {
   background-color: var(--color-surface) !important;
-  border-color: var(--color-border) !important;
+  border-color: var(--color-border-accent) !important;
+  transform: scale(1.02);
+}
+
+/* ── 9. Recursos (index.html) — Transformando colunas em cards ── */
+#recursos .grid > div {
+  background-color: var(--color-bg-subtle) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: var(--space-6) !important;
+  transition: all var(--transition-base);
+}
+
+#recursos .grid > div:hover {
+  border-color: var(--color-border-accent) !important;
+  background-color: var(--color-surface) !important;
 }
 
 /* Número dos steps */
@@ -440,36 +476,50 @@ footer .text-slate-500:hover {
 }
 
 /* ── 12. Checklist — comece-agora.html ───────────────────────── */
+/* ... (existing styles) ... */
 
-/* Body da página comece-agora */
-body.bg-\[#0e1322\] {
-  background-color: var(--color-bg) !important;
+/* Animação ao concluir um passo */
+@keyframes step-complete-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03) translateY(-4px); }
+  100% { transform: scale(1); }
 }
 
-/* Header hero do checklist */
-.mb-16.text-center h1 {
-  font-size: clamp(1.8rem, 4vw, var(--text-4xl));
-  letter-spacing: var(--tracking-tight);
+.step-card.completed-animation {
+  animation: step-complete-pop 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Card de progresso */
-.bg-surface-container.p-6.rounded-3xl {
-  background-color: var(--color-surface) !important;
-  border-color: var(--color-border) !important;
-  border-radius: var(--radius-2xl) !important;
+/* Indicador de progresso mais minimalista */
+.progress-container {
+  height: 4px !important;
+  background-color: var(--color-border) !important;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: var(--space-4);
 }
 
-/* Texto "Seu nível de proteção" */
-.text-on-surface-variant {
-  color: var(--color-text-secondary) !important;
-}
-
-/* Barra de progresso */
-.bg-surface-container-highest.rounded-full {
-  background-color: rgba(255,255,255,0.06) !important;
-}
 #progress-bar {
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 100%) !important;
+  height: 100%;
+  background: var(--color-accent) !important;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+/* ── 13. Microinterações Refinadas ────────────────────────────── */
+
+/* Botões com feedback de escala sutil no clique */
+button:active {
+  transform: scale(0.96) !important;
+}
+
+/* Transições suaves globais */
+* {
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* Feedback visual leve em cards expandidos */
+.step-content {
+  transition: all var(--transition-slow) !important;
 }
 
 /* Step Cards */
